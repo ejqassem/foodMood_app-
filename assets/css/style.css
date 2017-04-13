@@ -136,8 +136,8 @@ header {
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
- height: 800px; /*-- Need to change in order to eliminate vertical scroll */
  width: 100%;
+ height: 800px; /*-- Need to change in order to eliminate vertical scroll */
 }
 
 #opening-greeting {
