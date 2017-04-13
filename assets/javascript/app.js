@@ -121,7 +121,7 @@ function validation(userLocation) {
    authDomain: "contact-us-cb646.firebaseapp.com",
    databaseURL: "https://contact-us-cb646.firebaseio.com",
    projectId: "contact-us-cb646",
-   storageBucket: "contact-us-cb646.appspot.com",
+   storageBucket: "contacta-us-cb646.appspot.com",
    messagingSenderId: "73152289846"
  };
  firebase.initializeApp(config);
@@ -413,6 +413,7 @@ function lovePhoto() {
 
   var businessDisplay = $("<h1>").html(businessInfo.businessName[imageCount]);
   var ratingImage = $("<img>");
+  ratingImage.attr("id", "yelp-rating");
   ratingImage.attr("src", businessInfo.businessRating[imageCount]);
   ratingImage.attr("alt", "Yelp Rating");
   var yelpLink2 = $("<a>").attr("href", "https://www.yelp.com/biz/" + businessInfo.businessId[imageCount]);
@@ -428,6 +429,7 @@ function lovePhoto() {
   ratingDisplay.append(yelpLink2);
   var reviewCount = businessInfo.businessReviewCount[imageCount];
   var reviewCountDisplay = $("<h3>").html("Based on " + reviewCount + " reviews");
+  reviewCountDisplay.attr("id", "review-count-display");
 
   yelpInfoDiv.append(businessDisplay);
   yelpInfoDiv.append(ratingDisplay);

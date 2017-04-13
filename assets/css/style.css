@@ -224,6 +224,9 @@ header {
 #yelp-logo-2 {
   width: 100px;
   height: auto;
+  position: absolute;
+  top: 73px;
+  right: 70px;
 }
 
 .img-rounded:hover {
@@ -295,6 +298,7 @@ header {
   position: absolute;
   right: 900px;
   top: 2px;
+  color: white;
 }
 
 #start-over-btn {
@@ -386,4 +390,16 @@ textarea {
  border-radius:10px;
  font-family:raleway;
  background-color:#fff
+}
+
+#yelp-rating {
+  position: absolute;
+  right: 183px;
+  top: 102px;
+}
+
+#review-count-display {
+  position: absolute;
+  top: 75px;
+  right: 330px;
 }
