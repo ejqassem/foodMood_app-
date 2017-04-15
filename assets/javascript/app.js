@@ -76,14 +76,14 @@ function homeScreen() {
   facebookStatusDiv.attr("class", "row");
   var facebookStatus = $("<p>");
   facebookStatus.attr("id", "status");
-  facebookStatus.attr("class", "col-lg-2 offset-lg-10");
+  facebookStatus.attr("class", "col-sm-2 offset-sm-10 col-lg-2 offset-lg-10");
   facebookStatusDiv.append(facebookStatus);
 
   var openingGreetingDiv = $("<div>");
   openingGreetingDiv.attr("class", "row");
   var openingGreeting = $("<h1>");
   openingGreeting.attr("id", "opening-greeting");
-  openingGreeting.attr("class", "col-xl-8 offset-xl-2");
+  openingGreeting.attr("class", "col-sm-8 offset-sm-2 col-xl-8 offset-xl-2");
   openingGreeting.html("What are you in the <span id='mood-text2'><i> mood </i></span> for?");
   openingGreetingDiv.append(openingGreeting);
 
@@ -92,14 +92,14 @@ function homeScreen() {
   facebookGreetingDiv.attr("class", "row");
   var facebookGreeting = $("<h4>");
   facebookGreeting.attr("id", "facebook-greeting");
-  facebookGreeting.attr("class", "col-xl-6 offset-xl-3");
+  facebookGreeting.attr("class", "col-sm-6 offset-sm-3 col-xl-6 offset-xl-3");
   facebookGreeting.html("Please login to facebook to personalize user experience");
   facebookGreetingDiv.append(facebookGreeting);
 
   var locationFormContainer = $("<div>");
   locationFormContainer.attr("class", "row");
   var locationFormDiv = $("<div>");
-  locationFormDiv.attr("class", "col-xl-6 offset-xl-3");
+  locationFormDiv.attr("class", "col-sm-6 offset-sm-3 col-xl-6 offset-xl-3");
   var locationForm = $("<div>");
   locationForm.attr("class", "input-group");
   locationForm.html("<input class='form-control input-lg' id='user-location' type='text' name='user-location' placeholder='Enter your address to get started!'/>");
@@ -138,7 +138,7 @@ function openScreen() {
   cuisineTypeDiv.attr("class", "row");
 
   var cuisineTypeCol = $("<div>");
-  cuisineTypeCol.attr("class", "form-check cuisine-type col-lg-4 offset-lg-4 col-xl-6 offset-xl-3");
+  cuisineTypeCol.attr("class", "form-check cuisine-type col-sm-4 offset-sm-3 col-lg-4 offset-lg-4 col-xl-6 offset-xl-3");
   cuisineTypeCol.attr("id", "cuisine-type");
 
   var cuisineTypeHeading = $("<h1>");
@@ -290,7 +290,7 @@ function showPhoto() {
 
   var showPhotoDiv = $("<div>");
   showPhotoDiv.attr("id", "show-photo-div");
-  showPhotoDiv.attr("class", "col-xl-6 offset-xl-3");
+  showPhotoDiv.attr("class", "col-sm-6 offset-sm-3 col-xl-6 offset-xl-3");
 
   var foodImagesContainer = $("<div>");
   foodImagesContainer.attr("id", "food-images");
@@ -298,7 +298,7 @@ function showPhoto() {
 
   var foodImagesDiv = $("<div>");
   foodImagesDiv.attr("id", "food-images-div");
-  foodImagesDiv.attr("class", "col-xl-8 offset-xl-2");
+  foodImagesDiv.attr("class", "col-sm-8 offset-sm-2 col-xl-8 offset-xl-2");
 
   var foodImage = $("<img>");
   foodImage.attr("id", "food-img");
@@ -330,7 +330,7 @@ function showPhoto() {
   // Creating like & dislike "buttons" as images with Bootstrap img-rounded class
   // **Need to add on-click event listener for both buttons**
   var buttonsDiv = $("<div>");
-  buttonsDiv.attr("class", "col-xl-10 offset-xl-2");
+  buttonsDiv.attr("class", "col-sm-10 offset-sm-2 col-xl-10 offset-xl-2");
   buttonsDiv.attr("id", "like-buttons-div");
 
   var dislikeButton = $("<img>");
@@ -373,7 +373,7 @@ function lovePhoto() {
   lovePhotoContainer.attr("class", "row");
 
   lovePhotoDiv = $("<div>");
-  lovePhotoDiv.attr("class", "col-xl-6 offset-xl-3");
+  lovePhotoDiv.attr("class", "col-sm-6 offset-sm-3 col-xl-6 offset-xl-3");
   lovePhotoDiv.attr("id", "love-photo");
 
   var yelpInfoContainer = $("<div>");
@@ -383,7 +383,7 @@ function lovePhoto() {
 
  //add columns and rows for encompassing love-photo
   var businessDisplayDiv = $("<div>");
-  businessDisplayDiv.attr("class", "col-xl-12");
+  businessDisplayDiv.attr("class", "col-sm-12 col-xl-12");
   var businessDisplay = $("<h1>").html(businessInfo.businessName[imageCount]);
   businessDisplay.attr("id", "business-display");
 
@@ -410,14 +410,14 @@ function lovePhoto() {
   ratingDisplayDiv.attr("class", "row");
   var ratingDisplay = $("<h2>");
   ratingDisplay.attr("id", "yelp-logo-rating")
-  ratingDisplay.attr("class", "col-xl-6");
+  ratingDisplay.attr("class", "col-sm-6 col-xl-6");
   ratingDisplay.append(ratingImage);
   ratingDisplay.append(yelpLink2);
 
 
   var reviewCount = businessInfo.businessReviewCount[imageCount];
   var reviewCountDisplay = $("<h3>").html("Based on " + reviewCount + " reviews");
-  reviewCountDisplay.attr("class", "col-xl-6");
+  reviewCountDisplay.attr("class", "col-sm-6 col-xl-6");
   reviewCountDisplay.attr("id", "review-count-display");
   ratingDisplayDiv.append(reviewCountDisplay);
   ratingDisplayDiv.append(ratingDisplay);
@@ -432,7 +432,7 @@ function lovePhoto() {
   var chooseAnotherContainer = $("<div>");
   chooseAnotherContainer.attr("class", "row");
   var chooseAnotherDiv = $("<div>");
-  chooseAnotherDiv.attr("class", "col-xl-12");
+  chooseAnotherDiv.attr("class", "col-sm-12 col-xl-12");
   chooseAnotherDiv.attr("id", "not-satisfied");
   chooseAnotherDiv.text("Still not satisfied?");
   chooseAnotherContainer.append(chooseAnotherDiv);
@@ -442,7 +442,7 @@ function lovePhoto() {
   buttonsContainer.attr("class", "row");
 
   var buttonsDiv = $("<div>");
-  buttonsDiv.attr("class", "col-xl-12");
+  buttonsDiv.attr("class", "col-sm-12 col-xl-12");
   buttonsDiv.attr("id", "buttons-div");
 
   var returnButton = $("<button>");
@@ -484,7 +484,7 @@ function getDirections() {
   var mapDisplayContainer = $("<div>");
   mapDisplayContainer.attr("class", "row");
   var mapDisplayDiv = $("<div>");
-  mapDisplayDiv.attr("class", "col-xl-11 offset-xl-1");
+  mapDisplayDiv.attr("class", "col-sm-11 offset-sm-1 col-xl-11 offset-xl-1");
   var mapDisplay = $("<iframe>");
   // bootstrap class to create a encompassing panel around an element
   mapDisplay.attr("class", "well");
