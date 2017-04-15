@@ -24,12 +24,11 @@ html, body, #wrapper {
 
 header {
  min-width: 100vh;
- height: 8vh;
+ height: 6.5vh;
  position: relative;
 }
 
 #main-heading-text {
-  text-align: center;
   font-family: "tinderFont";
   text-shadow:
     -1px -1px 0 #ea474c ,
@@ -37,15 +36,20 @@ header {
     -1px 1px 0 #ea474c ,
     1px 1px 0 #ea474c ;
   color: #003366 ;
-  font-size: 2.5em;
-  padding-top: 1%;
+  font-size: 2.75em;
+  display: inline;
+  vertical-align: middle;
+  margin-right: 35%;
+  margin-left: 35%;
 }
 
 #main-heading {
  background-color: #003366 ;
  border-bottom: 4px solid lightgray;
  overflow: auto;
- padding-bottom: 4%;
+ padding-bottom: 0.5%;
+ padding-top: 0.5%;
+ text-align: center;
 }
 
 #mood-text {
@@ -64,20 +68,21 @@ header {
 }
 
 #facebook-wrapper {
-  padding-left: 25%;
-  padding-top: 1.5%;
+  text-align: right;
+  vertical-align: middle;
+  display: inline;
 }
 
 #contact-us {
   font-size: 1.25em;
-  padding-left: 5%;
-  padding-top: 1.5%;
   color: #ea474c;
   text-shadow:
     -1px -1px 0 #003366 ,
     1px -1px 0 #003366 ,
     -1px 1px 0 #003366 ,
     1px 1px 0 #003366;
+  vertical-align: middle;
+  display: inline;
 }
 
 #main-section {
@@ -90,9 +95,9 @@ header {
 }
 
 #facebook-greeting {
-  text-align: center;
   color: white;
   margin-bottom: 4%;
+  text-align: center;
 }
 
 #opening-greeting {
@@ -103,18 +108,13 @@ header {
   margin-top: 2%;
 }
 
+#location-form {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 #status {
   color: white;
-}
-
-#user-location		{
-  width: 50%;
-  -webkit-transition:width 0.3s ease-in-out;
-}
-
-#user-location:focus	{
-  width: 100%;
-  -webkit-transition:width 0.5s ease-in-out;
 }
 
 #cuisine-type {
@@ -132,10 +132,19 @@ header {
   box-shadow: 10px 10px 5px black;
 }
 
+.form-check-input {
+  vertical-align: middle;
+  margin-right: 1%;
+}
+
 #cuisine-header {
   text-align: center;
   margin-top: 10px;
   font-size: 3em;
+  border-bottom: 2px solid white;
+  margin-right: 5%;
+  margin-left: 5%;
+  padding-bottom: 1%; 
 }
 
 .food-list {
