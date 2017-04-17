@@ -56,19 +56,18 @@ $("#submit-msg").on("click", function(event) {
   $("#user-email").val("");
   $("#user-msg").val("");
 
- // Prevents moving to new page
- return false;
+ divHide();
 });
 
 
 // showing contact us form
-function div_show() {
-     document.getElementById("contact-us-form").style.display = "block";
+function divShow() {
+     $("#contact-us-form").show();
    }
 
 // Hiding contact us form.
-function div_hide() {
-     document.getElementById("contact-us-form").style.display = "none";
+function divHide() {
+     $("#contact-us-form").hide();
    }
 
 function homeScreen() {
@@ -121,6 +120,7 @@ function homeScreen() {
   $("#main-section").append(openingGreetingDiv);
   $("#main-section").append(facebookGreetingDiv);
   $("#main-section").append(locationFormContainer);
+
 }
 
 // Screen opened after the user inputs their location, lists cuisines types for the user to
@@ -153,7 +153,7 @@ function openScreen() {
     var foodList = $("<label>");
     foodList.attr("class", "food-list form-check-label control-label col-lg-12");
     foodList.attr("id", "food-list" + counter);
-    foodList.html("<input value=" + foodTypes[i] + " " + "type='radio' name='optradio' class=' form-check-input'>" + foodTypes[i]);
+    foodList.html("<input value=" + foodTypes[i] + " " + "type='radio' name='optradio' class='form-check-input'>" + foodTypes[i]);
     cuisineTypeCol.append(foodList);
     counter++;
   }
@@ -541,6 +541,11 @@ $(document).on("click", "#get-started", function(event) {
     });
   }
 });
+
+// when user clicks contact us, a contact-us form appears
+// $("#contact-us").on('click', function() {
+//   divShow();
+// });
 
 // If the user clicks the like button execute the ??? function
 $(document).on("click", "#like-btn", lovePhoto);

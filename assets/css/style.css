@@ -83,6 +83,7 @@ header {
     1px 1px 0 #003366;
   vertical-align: middle;
   display: inline;
+  cursor: pointer;
 }
 
 #main-section {
@@ -144,7 +145,7 @@ header {
   border-bottom: 2px solid white;
   margin-right: 5%;
   margin-left: 5%;
-  padding-bottom: 1%; 
+  padding-bottom: 1%;
 }
 
 .food-list {
@@ -282,273 +283,17 @@ header {
   margin-left: 29%;
 }
 
-
-/*
-#mood-text2 {
- text-shadow:
-   -1px -1px 0 #ea474c ,
-   1px -1px 0 #ea474c ,
-   -1px 1px 0 #ea474c ,
-   1px 1px 0 #ea474c ;
- color: #003366 ;
- font-family: "tinderFont";
-}
-
-#get-started {
-  cursor: pointer;
-  font-size: 36px;
-  margin-top: 10px;
-  border-radius: 10px;
-  font-family: "tinderFont";
-  position: absolute;
-  top: 335px;
-  right: 76%;
-  font-size: 36px;
-}
-
-#get-started-text {
- color: #ea474c;
- text-decoration: none;
-}
-
-#get-started-text:hover {
-  color: red;
-}
-
-#home-screen-submit {
-   position: absolute;
-   right: -5px;
-   bottom: 0px;s
-}
-
-#location-form {
- text-align: center;
- position: absolute;
- left: 500px;
- top: 300px;
- width: 500px;
-}
-
-.cuisine-type {
-  text-shadow:
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;
-  margin-top : 20px;
-  width: 600px;
-  color: white;
-  position: absolute;
-  right: 20%;
-  font-family: "tinderFont";
-  background-color: black;
-  padding-left: 20px;
-  background-image: linear-gradient(rgba(255,255,255,0.10),rgba(255,255,255,0.1));
-  box-shadow: 10px 10px 5px black;
-}
-
-#main-section {
- overflow: auto;
- padding-top: 0px;
- background-image: linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05)), url("../images/backgroundImage3.jpg");
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- min-width: 100vh;
- min-height: 100vh;
- align-self: stretch;
-}
-
-#opening-greeting {
- font-size: 60px;
- color: white;
- margin-top: 30px;
- text-shadow:
-   -1px -1px 0 black,
-   1px -1px 0 black,
-   -1px 1px 0 black,
-   1px 1px 0 black;
- text-align: center;
-}
-
-#cuisine-header {
-  padding-top: 10px;
-}
-
-.food-list {
-  padding-left: 20px;
-}
-
-.food-list:hover {
-  color: #C40000;
-  font-family: "tinderFont";
-  cursor: pointer;
-}
-
-#dislike-btn {
-  width: 100px;
-  height: 100px;
-  margin-right: 125px;
-  background-color: gray;
-  border-radius: 50%;
-  box-shadow: 10px 10px 5px black;
-}
-
-#like-btn {
-  width: 100px;
-  height: 100px;
-  background-color: gray;
-  border-radius: 50%;
-  box-shadow: 10px 10px 5px black;
-}
-
-#food-images {
-  margin-top: 50px;
-  position: absolute;
-  width: 650px;
-  height: 700px;
-  left: 28%;
-  background-image: linear-gradient(rgba(255,255,255,0.10),rgba(255,255,255,0.1));
-  box-shadow: 10px 10px 5px black;
-  background-color: black;
-}
-
-#food-img {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin-top: 50px;
-  margin-left: 125px;
-  border: 5px solid black;
-  box-shadow: 10px 10px 5px black;
-}
-
-#yelp-logo {
-  width: 100px;
-  height: auto;
-  overflow: auto;
-  position: absolute;
-  bottom: 265px;
-  right: 145px;
-  z-index: 1;
-}
-
-#buttons-div {
-  position: absolute;
-  left: 39%;
-  top: 68%;
-}
-
-#yelp-logo-2 {
-  width: 100px;
-  height: auto;
-  position: absolute;
-  top: 73px;
-  right: 70px;
-}
-
-.img-rounded:hover {
-  cursor: pointer;
-}
-
-#love-photo {
-  margin-top: 50px;
-  position: absolute;
-  width: 650px;
-  height: 700px;
-  left: 28%;
-  background-image: linear-gradient(rgba(255,255,255,0.10),rgba(255,255,255,0.10));
-  box-shadow: 10px 10px 5px black;
-  background-color: black;
-}
-
-#google-maps {
-  position: absolute;
-  top: 15%;
-  margin-top: 50px;
-  margin-left: 75px;
-}
-
-#need-cuisine-div {
-  font-family: sans-serif, arial;
-  color: red;
-  position: absolute;
-  left: 150px;
-  bottom: 10px;
-  font-size: 18px;
-  width: 300px;
-}
-
-.yelp-info-div {
-  text-align: center;
-  color: white;
-}
-
-#return-btn {
-  position: absolute;
-  left: 20%;
-  bottom: 5%;
-}
-
-#facebook-greeting {
-  position: absolute;
-  bottom: 77%;
-  left: 29%;
-  color: white;
-  padding-bottom: 10px;
-  font-size: 24px;
-}
-
-#status {
-  color: white;
-  font-size: 16px;
-  position: absolute;
-  right: 3%;
-}
-
-#share-btn {
-  position: absolute;
-  right: 900px;
-  top: 2px;
-  color: white;
-}
-
-#start-over-btn {
-  position: absolute;
-  bottom: 5%;
-  right: 20%;
-}
-
-#chooseAnother {
-  position: absolute;
-  bottom: 13%;
-  right: 32%;
-  color: white;
-  font-size: 28px;
-}
-
-a {
- cursor: pointer;
-}
-
-a:link{
- text-decoration: none;
-}
-
 #close {
  position:absolute;
  right:14px;
  top:14px;
- cursor:pointer
+ cursor: pointer;
  height: 20px;
  width: 20px;
 }
 
-#contact-us {
- font-size: 22px;
-}
-
 #contact-us-form {
+ z-index: 2;
  width:100%;
  height:100%;
  opacity:0.95;
@@ -559,53 +304,45 @@ a:link{
  overflow: auto;
 }
 
-#popupContact {
+#popup-contact {
  position:absolute;
  left:50%;
  top:17%;
  margin-left:-202px;
  font-family:'Raleway',sans-serif;
-
 }
 
 #user-name, #user-email, #user-msg {
- padding:5px;
- border:1px solid #ccc;
- font-size:16px;
- size: 35px;
- }
+ padding: 5px;
+ border: 1px solid #ccc;
+ font-size: 1em;
+}
+
+#user-name, #user-email {
+  width: 95%;
+}
 
 textarea {
- background-position:5px 7px;
- width: 90%;
+ background-position: 5px 7px;
+ width: 95%;
  height: 20%;
  padding: 10px;
- margin-top:30px;
+ margin-top: 30px;
  border:1px solid #ccc;
- font-size:16px;
+ font-size: 1em;
  font-family: raleway;
- margin-bottom:30px
- }
+ margin-bottom: 30px;
+}
 
  #form {
- width:400px;
- height:400px;
- padding-left:10px;
- border:2px solid gray;
- border-radius:10px;
- font-family:raleway;
- background-color:#fff
+ width: auto;
+ height: 100%;
+ padding-right: 10%;
+ padding-top: 4%;
+ padding-bottom: 4%;
+ padding-left: 10%;
+ border: 2px solid gray;
+ border-radius: 10px;
+ font-family: raleway;
+ background-color:#fff;
 }
-
-#yelp-rating {
-  position: absolute;
-  right: 183px;
-  top: 102px;
-}
-
-#review-count-display {
-  position: absolute;
-  top: 75px;
-  right: 330px;
-}
-*/
