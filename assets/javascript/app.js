@@ -2,6 +2,7 @@
 // =====================================================================================
 var userName2 = "";
 var userLocation;
+var googleLocation;
 var cuisineChosen;
 var businessInfo = {
   businessName: [],
@@ -70,6 +71,25 @@ function divHide() {
      $("#contact-us-form").hide();
    }
 
+
+function geolocation() {
+
+  // create an error handler for cross-browser compatibility 
+
+  window.onload = function() {
+    var startPos;
+    var geoSuccess = function(position) {
+      startPos = position;
+      console.log(startPos.coords.latitude);
+      console.log(startPos.coords.longitude);
+      googleLocation = startPos.coords.latitude + ", " + startPos.coords.longitude;
+    };
+    navigator.geolocation.getCurrentPosition(geoSuccess);
+  };
+
+}
+
+
 function homeScreen() {
   var facebookStatusDiv = $("<div>");
   facebookStatusDiv.attr("class", "row");
@@ -85,7 +105,6 @@ function homeScreen() {
   openingGreeting.attr("class", "col-xs-8 offset-xs-2 col-xl-8 offset-xl-2");
   openingGreeting.html("What are you in the <span id='mood-text2'><i> mood </i></span> for?");
   openingGreetingDiv.append(openingGreeting);
-
 
   var facebookGreetingDiv = $("<div>");
   facebookGreetingDiv.attr("class", "row");
@@ -121,6 +140,7 @@ function homeScreen() {
   $("#main-section").append(facebookGreetingDiv);
   $("#main-section").append(locationFormContainer);
 
+  geolocation();
 }
 
 // Screen opened after the user inputs their location, lists cuisines types for the user to
@@ -410,7 +430,7 @@ function lovePhoto() {
   ratingDisplayDiv.attr("id", "rating-display-div");
   ratingDisplayDiv.attr("class", "row");
   var ratingDisplay = $("<h2>");
-  ratingDisplay.attr("id", "yelp-logo-rating")
+  ratingDisplay.attr("id", "yelp-logo-rating");
   ratingDisplay.attr("class", "col-xs-6 col-xl-6");
   ratingDisplay.append(ratingImage);
   ratingDisplay.append(yelpLink2);
@@ -513,7 +533,13 @@ homeScreen();
 // the openScreen function
 $(document).on("click", "#home-screen-submit", function(event) {
   event.preventDefault();
-  userLocation = $("#user-location").val().trim();
+  if(!$("#user-location").val().trim()) {
+    userLocation = googleLocation;
+  }
+  else {
+    userLocation = $("#user-location").val().trim();
+  }
+
   $("#user-location").val("");
   console.log(userLocation);
   $("#main-section").empty();
