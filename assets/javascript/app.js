@@ -72,22 +72,22 @@ function divHide() {
    }
 
 
-function geolocation() {
+// function geolocation() {
 
-  // create an error handler for cross-browser compatibility 
+  // create an error handler for cross-browser compatibility
 
-  window.onload = function() {
-    var startPos;
-    var geoSuccess = function(position) {
-      startPos = position;
-      console.log(startPos.coords.latitude);
-      console.log(startPos.coords.longitude);
-      googleLocation = startPos.coords.latitude + ", " + startPos.coords.longitude;
-    };
-    navigator.geolocation.getCurrentPosition(geoSuccess);
-  };
-
-}
+//   window.onload = function() {
+//     var startPos;
+//     var geoSuccess = function(position) {
+//       startPos = position;
+//       console.log(startPos.coords.latitude);
+//       console.log(startPos.coords.longitude);
+//       googleLocation = startPos.coords.latitude + ", " + startPos.coords.longitude;
+//     };
+//     navigator.geolocation.getCurrentPosition(geoSuccess);
+//   };
+//
+// }
 
 
 function homeScreen() {
@@ -124,6 +124,8 @@ function homeScreen() {
   locationForm.html("<input class='form-control input-lg' id='user-location' type='text' name='user-location' placeholder='Enter your address to get started!'/>");
   var homeScreenSubmitContainer = $("<span>");
   homeScreenSubmitContainer.attr("class", "input-group-btn");
+  var findNearMeContainer = $("<span>");
+  homeScreenSubmitContainer.attr("class", "input-group-btn");
 
   var homeScreenSubmit = $("<button>");
   homeScreenSubmit.attr("type", "button");
@@ -135,12 +137,21 @@ function homeScreen() {
   locationFormDiv.append(locationForm);
   locationFormContainer.append(locationFormDiv);
 
+  var findNearMe = $("<button>");
+  findNearMe.attr("type", "button");
+  findNearMe.attr("class", "btn btn-secondary");
+  findNearMe.attr("id", "find-near-me-submit");
+  findNearMe.html("Find Near Me");
+  findNearMeContainer.append(findNearMe);
+  locationForm.append(findNearMe);
+  locationFormDiv.append(locationForm);
+  locationFormContainer.append(locationFormDiv);
+
+
   $("#main-section").append(facebookStatusDiv);
   $("#main-section").append(openingGreetingDiv);
   $("#main-section").append(facebookGreetingDiv);
   $("#main-section").append(locationFormContainer);
-
-  geolocation();
 }
 
 // Screen opened after the user inputs their location, lists cuisines types for the user to
@@ -546,6 +557,27 @@ $(document).on("click", "#home-screen-submit", function(event) {
   openScreen();
 });
 
+$(document).on("click", "#find-near-me-submit", function(event) {
+  event.preventDefault();
+
+  // Immediately invoked function expression to determine user location based on HTML5 geolocation
+  (function() {
+    var startPos;
+    var geoSuccess = function(position) {
+      startPos = position;
+      console.log(startPos.coords.latitude);
+      console.log(startPos.coords.longitude);
+      googleLocation = startPos.coords.latitude + ", " + startPos.coords.longitude;
+      userLocation = googleLocation;
+    };
+    navigator.geolocation.getCurrentPosition(geoSuccess);
+  })();
+
+  $("#user-location").val("");
+  $("#main-section").empty();
+  setTimeout(openScreen, 500);
+});
+
 // After the user chooses a cuisine type and clicks the get started button, the yelpSearch
 // function is executed without reloading the page
 $(document).on("click", "#get-started", function(event) {
@@ -568,10 +600,6 @@ $(document).on("click", "#get-started", function(event) {
   }
 });
 
-// when user clicks contact us, a contact-us form appears
-// $("#contact-us").on('click', function() {
-//   divShow();
-// });
 
 // If the user clicks the like button execute the ??? function
 $(document).on("click", "#like-btn", lovePhoto);
