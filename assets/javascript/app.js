@@ -16,6 +16,7 @@ var lovePhotoDiv;
 var cuisinePicked = false;
 var imageCount = 0;
 var lovePhotoDiv;
+var clickedFindNearMe = false;
 
 // FUNCTIONS
 // =====================================================================================
@@ -344,7 +345,7 @@ function showPhoto() {
 
   // Adding Yelp logo/link to Yelp to image in order to comply with Yelp API display requirements
   var yelpLink = $("<a>");
-  yelpLink.attr("href", "http://www.yelp.com");
+  yelpLink.attr("href", "https://www.yelp.com");
   yelpLink.attr("target", "_blank");
   var yelpLogo = $("<img>");
   yelpLogo.attr("id", "yelp-logo");
@@ -530,6 +531,37 @@ function getDirections() {
   lovePhotoDiv.append(mapDisplayContainer);
 }
 
+// makes sure userLocation is defined before conducting yelpSearch()
+// HTML geolocation takes 500-1000ms to grab location and yelp API depends
+// on location information to run
+function checkVariable() {
+  if(userLocation) {
+    // $("#loadingScreenDiv").hide();
+    yelpSearch();
+    $(document).ajaxStop(function() {
+      showPhoto();
+    });
+  }
+  else {
+    loadingScreen();
+    window.setTimeout(checkVariable, 100);
+  }
+}
+
+function loadingScreen() {
+  $("#main-section").empty();
+  var loadingScreenContainer = $("<div>");
+  loadingScreenContainer.attr("class", "row");
+  loadingScreenContainer.attr("id", "loadingScreenDiv");
+  var loadingScreenDiv = $("<div>");
+  loadingScreenDiv.attr("class", "col-lg-12");
+  var loadingScreen = $("<img>");
+  loadingScreen.attr("src", "assets/images/9.gif");
+  loadingScreenDiv.append(loadingScreen);
+  loadingScreenContainer.append(loadingScreenDiv);
+  $("#main-section").append(loadingScreenContainer);
+}
+
 // MAIN PROCESS
 // ==========================================================================================
 
@@ -559,6 +591,7 @@ $(document).on("click", "#home-screen-submit", function(event) {
 
 $(document).on("click", "#find-near-me-submit", function(event) {
   event.preventDefault();
+  clickedFindNearMe = true;
 
   // Immediately invoked function expression to determine user location based on HTML5 geolocation
   (function() {
@@ -575,7 +608,7 @@ $(document).on("click", "#find-near-me-submit", function(event) {
 
   $("#user-location").val("");
   $("#main-section").empty();
-  setTimeout(openScreen, 500);
+  setTimeout(openScreen, 250);
 });
 
 // After the user chooses a cuisine type and clicks the get started button, the yelpSearch
@@ -588,15 +621,20 @@ $(document).on("click", "#get-started", function(event) {
     needCuisineDiv.html("Please pick a Cuisine Type!");
     $("#get-started").append(needCuisineDiv);
   }
+  // create function that waits for userLocation to become defined
+  // http://stackoverflow.com/questions/7307983/while-variable-is-not-defined-wait
+  //   else if (!userLocation) {
+  //
+  //   }
   else {
     $("#need-cuisine-div").hide();
     cuisinePicked = true;
     cuisineChosen = $('input[name=optradio]:checked').val();
     console.log(cuisineChosen);
-    yelpSearch();
-    $(document).ajaxStop(function() {
-      showPhoto();
-    });
+    // makes sure userLocation is defined before conducting yelpSearch()
+    // HTML geolocation takes 500-1000ms to grab location and yelp API depends
+    // on location information to run
+    checkVariable();
   }
 });
 

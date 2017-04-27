@@ -41,6 +41,7 @@ header {
   vertical-align: middle;
   margin-right: 35%;
   margin-left: 35%;
+  margin-bottom: -2px;
 }
 
 #main-heading {
@@ -345,4 +346,10 @@ textarea {
  border-radius: 10px;
  font-family: raleway;
  background-color:#fff;
+}
+
+#loadingScreenDiv {
+  margin-left: 38%;
+  margin-right: 40%;
+  margin-top: 14%;
 }
