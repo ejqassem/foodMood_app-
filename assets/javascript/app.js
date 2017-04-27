@@ -536,7 +536,7 @@ function getDirections() {
 // on location information to run
 function checkVariable() {
   if(userLocation) {
-    // $("#loadingScreenDiv").hide();
+    $("#loadingScreenDiv").hide();
     yelpSearch();
     $(document).ajaxStop(function() {
       showPhoto();
